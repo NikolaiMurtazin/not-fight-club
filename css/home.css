@@ -1,0 +1,49 @@
+.home {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 1.25rem;
+}
+
+.home__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Orbitron", system-ui, sans-serif;
+    letter-spacing: .5px;
+    margin: 0;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: var(--accent);
+    text-shadow: 0 0 6px rgba(56,189,248,.4);
+}
+
+.player {
+    display: inline-flex;
+    gap: .5rem;
+    align-items: baseline;
+    font-size: .95rem;
+    opacity: .95;
+}
+.player__label { opacity: .7; }
+.player__name { color: var(--accent); }
+
+.home__main { display: grid; gap: 1rem; }
+
+.welcome h2 {
+    margin: 0 0 .35rem;
+    font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+}
+.welcome .muted { opacity: .75; }
+
+/* Сетка действий */
+.actions { grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media (max-width: 540px) {
+    .actions { grid-template-columns: 1fr; }
+}
+
+.home__footer { display: flex; justify-content: center; }
+.home__footer .muted { opacity: .6; }

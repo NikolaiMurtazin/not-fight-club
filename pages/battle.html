@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Not Fight Club — Battle</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../node_modules/@a1rth/css-normalize/normalize.css">
+		<link rel="stylesheet" href="../css/base.css">
+		<link rel="stylesheet" href="../css/battle.css">
+		<script src="../js/battle.js" defer></script>
+	</head>
+	<body>
+		<div class="battle">
+			<header class="site-header">
+				<a class="btn" href="home.html">← Home</a>
+				<h1 class="brand neon">Not Fight Club</h1>
+				<div></div>
+			</header>
+			<main class="battle__main">
+				<section class="arena card">
+					<div class="fighter you">
+						<div class="fighter__avatar">
+							<img id="you-avatar" src="../assets/img/avatars/default.png" alt="You">
+						</div>
+						<div class="fighter__info">
+							<h2 id="you-name">You</h2>
+							<div class="hp">
+								<div class="hp__bar"><div class="hp__fill" id="you-hp-fill" style="width:100%"></div></div>
+								<span class="hp__text" id="you-hp-text">100 / 100</span>
+							</div>
+							<div class="chips">
+								<span class="chip">ATK: <b id="you-atk">10</b></span>
+								<span class="chip">CRIT: <b id="you-crit">15%</b> × <b id="you-critmul">1.5</b></span>
+							</div>
+						</div>
+					</div>
+					<div class="fighter enemy">
+						<div class="fighter__avatar">
+							<img id="enemy-avatar" src="../assets/img/enemies/goblin.png" alt="Enemy">
+						</div>
+						<div class="fighter__info">
+							<h2 id="enemy-name">Enemy</h2>
+							<div class="hp">
+								<div class="hp__bar"><div class="hp__fill" id="enemy-hp-fill" style="width:100%"></div></div>
+								<span class="hp__text" id="enemy-hp-text">100 / 100</span>
+							</div>
+							<div class="chips">
+								<span class="chip">ATK: <b id="enemy-atk">10</b></span>
+								<span class="chip">CRIT: <b id="enemy-crit">15%</b> × <b id="enemy-critmul">1.5</b></span>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="controls card">
+					<div class="zones">
+						<div class="zones__group">
+							<h3>Attack (choose <span id="attack-need">1</span>)</h3>
+							<div class="zone-buttons" data-type="attack">
+								<button type="button" class="zone" data-zone="head">Head</button>
+								<button type="button" class="zone" data-zone="neck">Neck</button>
+								<button type="button" class="zone" data-zone="body">Body</button>
+								<button type="button" class="zone" data-zone="belly">Belly</button>
+								<button type="button" class="zone" data-zone="legs">Legs</button>
+							</div>
+						</div>
+						<div class="zones__group">
+							<h3>Defence (choose <span id="defence-need">2</span>)</h3>
+							<div class="zone-buttons" data-type="defence">
+								<button type="button" class="zone" data-zone="head">Head</button>
+								<button type="button" class="zone" data-zone="neck">Neck</button>
+								<button type="button" class="zone" data-zone="body">Body</button>
+								<button type="button" class="zone" data-zone="belly">Belly</button>
+								<button type="button" class="zone" data-zone="legs">Legs</button>
+							</div>
+						</div>
+					</div>
+					<div class="actions">
+						<button class="btn btn--primary" id="next-turn" disabled>Next turn</button>
+						<button class="btn btn--ghost" id="new-battle">New battle</button>
+					</div>
+				</section>
+				<section class="log card">
+					<div class="log__header">
+						<h3>Battle log</h3>
+						<button class="btn btn--small btn--ghost" id="clear-log">Clear</button>
+					</div>
+					<ol class="log__list" id="log-list"></ol>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,89 @@
+.battle {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.battle__main { display: grid; gap: 1rem; }
+
+/* карточки — уже в base.css (класс .card) */
+
+/* арена */
+.arena {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.fighter {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: .75rem;
+    align-items: center;
+}
+.fighter__avatar img {
+    width: 120px; height: 120px; object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,.35);
+}
+.fighter__info h2 { margin: 0 0 .5rem; }
+
+/* панель зон */
+.controls { display: grid; gap: 1rem; }
+.zones { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.zones h3 { margin: 0 0 .35rem; }
+
+/* сетка для зон (5 колонок) */
+.zone-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .5rem;
+    margin-bottom: .5rem;
+}
+
+.zone {
+    padding: .6rem .4rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.15);
+    background: rgba(255,255,255,.06);
+    color: white;
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .06s ease, filter .15s ease, border-color .15s ease;
+}
+.zone:hover { filter: brightness(1.1); }
+.zone:active { transform: translateY(1px) scale(.98); }
+.zone:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent);
+    border-color: var(--accent);
+}
+.zone.active {
+    border-color: var(--accent);
+    background: color-mix(in oklab, var(--accent) 25%, transparent);
+    box-shadow: 0 0 10px color-mix(in oklab, var(--accent) 40%, transparent);
+}
+
+/* лог боя */
+.log__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .4rem; }
+.log__list { margin: 0; padding: 0 0 0 1.1rem; max-height: 260px; overflow: auto; }
+.log__list li { margin: .35rem 0; line-height: 1.35; }
+.log__list .who { font-weight: 700; }
+.log__list .zone { font-style: italic; opacity: .9; }
+.log__list .dmg { color: #22c55e; font-weight: 700; }
+.log__list .crit { color: #fbbf24; font-weight: 700; }
+
+/* мобилки */
+@media (max-width: 860px) {
+    .arena { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+    .fighter { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    .zones { grid-template-columns: 1fr; }
+    .zone-buttons { grid-template-columns: repeat(3, 1fr); }
+    .actions.row { flex-direction: column; }
+}

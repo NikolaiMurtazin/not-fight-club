@@ -1,0 +1,51 @@
+.registration {
+    background: var(--surface);
+    backdrop-filter: saturate(120%) blur(8px);
+    padding: 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.45);
+    border: 1px solid var(--surface-border);
+    animation: rise-in .6s ease-out both;
+}
+
+.registration h1 {
+    font-family: "Orbitron", system-ui, sans-serif;
+    letter-spacing: .5px;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+}
+
+/* Можно дать эффект неона на заголовок через .neon из base.css */
+.registration h1.neon { animation: neon-flicker 2.8s infinite; }
+
+.registration-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.registration-form label {
+    font-size: .9rem;
+    text-align: left;
+    opacity: .9;
+}
+
+.registration-form input {
+    padding: .75rem .9rem;
+    border: 1px solid var(--surface-border-strong);
+    background: var(--surface-bg);
+    color: white;
+    outline: none;
+}
+.registration-form input::placeholder { color: rgba(255,255,255,.55); }
+.registration-form input:hover { border-color: rgba(255,255,255,.25); }
+.registration-form input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 25%, transparent);
+    transform: translateY(-1px);
+}
+
+/* Кнопка сабмита — просто .btn .btn--primary из base.css */
