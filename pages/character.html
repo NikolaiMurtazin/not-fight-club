@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Not Fight Club — Character</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../node_modules/@a1rth/css-normalize/normalize.css">
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/character.css" />
+    <script src="../js/character.js" defer></script>
+  </head>
+  <body>
+    <div class="character">
+      <header class="character__header">
+        <a class="btn" href="home.html">← Home</a>
+        <h1 class="logo neon">Character</h1>
+        <div style="width:64px"></div>
+      </header>
+      <main class="character__main">
+        <section class="card profile">
+          <div class="profile__avatar">
+            <img id="avatar-img" src="../assets/img/avatars/default.png" alt="Avatar" />
+            <button class="btn btn--small btn--ghost" id="change-avatar-btn">Change avatar</button>
+          </div>
+          <div class="profile__info">
+            <h2 id="player-name">Player</h2>
+            <ul class="stats">
+              <li><span>Wins:</span> <strong id="wins">0</strong></li>
+              <li><span>Losses:</span> <strong id="losses">0</strong></li>
+            </ul>
+          </div>
+        </section>
+        <section class="card avatar-picker" id="avatar-picker" hidden>
+          <h3>Choose your avatar</h3>
+          <div class="thumbs" id="thumbs">
+            <button class="thumb" data-src="../assets/img/avatars/default.png">
+              <img src="../assets/img/avatars/default.png" alt="Default">
+            </button>
+            <button class="thumb" data-src="../assets/img/avatars/knight.png">
+              <img src="../assets/img/avatars/knight.png" alt="Knight">
+            </button>
+            <button class="thumb" data-src="../assets/img/avatars/rogue.png">
+              <img src="../assets/img/avatars/rogue.png" alt="Rogue">
+            </button>
+            <button class="thumb" data-src="../assets/img/avatars/mage.png">
+              <img src="../assets/img/avatars/mage.png" alt="Mage">
+            </button>
+          </div>
+          <div class="picker-actions">
+            <label for="avatar-url" class="visually-hidden">Avatar image URL</label>
+            <input type="url" id="avatar-url" placeholder="or paste image URL (https://…)" />
+            <button class="btn btn--primary" id="save-avatar">Save</button>
+            <button class="btn btn--ghost" id="cancel-avatar">Cancel</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
